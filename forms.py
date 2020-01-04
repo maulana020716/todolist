@@ -22,3 +22,5 @@ class TaskForm(FlaskForm):
 
 class DeleteForm(FlaskForm):
     submit = SubmitField('Submit')
+
+#Manskuyy

@@ -24,3 +24,4 @@ class DeleteForm(FlaskForm):
     submit = SubmitField('Submit')
 
 #Manskuyy
+#Ninda

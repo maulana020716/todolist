@@ -17,12 +17,9 @@ class RegisterForm(FlaskForm):
 
 class TaskForm(FlaskForm):
     content = TextField('Description:', validators=[Required()])
-    status = SelectField('Status', choices=[('1','Todo'), ('2','Doing'), ('3', 'Done')], default='1')
+    status = SelectField('Status', choices=[('1','Todo'), ('2','Doing'), ('3', 'Done')], 
+        default='1')
     submit = SubmitField('Submit')
 
 class DeleteForm(FlaskForm):
     submit = SubmitField('Submit')
-
-#Manskuyy
-#Ninda
-#jarvi11

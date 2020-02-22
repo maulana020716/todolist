@@ -26,14 +26,12 @@ def login():
             flash('Login Failed! Wrong Password')
     return render_template('login.html', form=form, title='Login | TodoApp')
 
-
 @app.route('/logout')
 def logout():
     if 'username' in session:
         session.pop('username')
         flash('You have successfully logged out.')
     return redirect(url_for('login'))
-
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -58,14 +56,12 @@ def register():
     
     return render_template('register.html', form=form, title="Register | TodoApp")
 
-
 @app.route('/todos')
 @login_required
 def todo_list(*args, **kwargs):
     user = kwargs.get('user')
     task_list = Task.query.filter_by(user_id=user.id).all()
     return render_template('todo/list.html', data_list=task_list, title="Ta Do List | TodoApp")
-
 
 @app.route('/todos/add', methods=['GET', 'POST'])
 @login_required
